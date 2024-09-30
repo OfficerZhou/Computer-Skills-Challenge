@@ -28,39 +28,61 @@
 // 2 
 // 1 3 8 10 
 // 样例输出： 4 5 6 7
-int main()
-{
-	int x[10000];
-	int a[2];
-	int b[2];
-	int N;
-	scanf_s("%d", &N);
-	int tem = N;
-	int i = 0;
-	for (i = 0; i < N; i++)
-	{
-		scanf_s("%d", &x[i]);
-	}
-	int K;
-	scanf_s("%d", &K);
-	for (i = 0; i < K; i++)
-		scanf_s("%d %d", &a[i],&b[i]);
-	for (i = 0; i < K; i++)
-	{
-		int j = 0;
-		for (j = 0; j < N; j++)
-		{
-			if (a[i] <= x[j]&&x[j] <= b[i])
-			{
-				x[j] = NULL;
-				tem--;
-			}
-		}
-	}
-	for (i = 0; i < N; i++)
-	{
-		if (x[i] != 0)
-			printf("%d ", x[i]);
-	}
-	return 0;
+//int main()
+//{
+//	int x[10000];
+//	int a[2];
+//	int b[2];
+//	int N;
+//	scanf_s("%d", &N);
+//	int tem = N;
+//	int i = 0;
+//	for (i = 0; i < N; i++)
+//	{
+//		scanf_s("%d", &x[i]);
+//	}
+//	int K;
+//	scanf_s("%d", &K);
+//	for (i = 0; i < K; i++)
+//		scanf_s("%d %d", &a[i],&b[i]);
+//	for (i = 0; i < K; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < N; j++)
+//		{
+//			if (a[i] <= x[j]&&x[j] <= b[i])
+//			{
+//				x[j] = NULL;
+//				tem--;
+//			}
+//		}
+//	}
+//	for (i = 0; i < N; i++)
+//	{
+//		if (x[i] != 0)
+//			printf("%d ", x[i]);
+//	}
+//	return 0;
+//}
+
+
+
+int main() {
+    int num1;
+    char str1[100];
+    printf("请输入一个整数（字符串形式）：");
+    fgets(str1, sizeof(str1), stdin); // 从标准输入读取字符串
+    num1 = atoi(str1); // 将字符串转换为整数
+    printf("转换后的整数是：%d\n", num1);
+
+    int num2;
+    char str2[100]; // 用于存储转换后的字符串
+    printf("请输入一个整数：");
+    scanf_s("%d", &num2); // 输入整数
+    // 使用 sprintf 将整数转换为字符串
+    snprintf(str2, sizeof(str2), "%d", num2);
+    // 输出结果
+    printf("转换后的字符串是：%s\n", str2);
+
+    return 0;
 }
