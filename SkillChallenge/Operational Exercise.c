@@ -101,7 +101,7 @@
 // 样例解释： 从1~20中素数有2,3,5,7,11,13,17,19，再结合条件2可以看到对称的数只有 2 3 5 7 11，又因
 
 #include<string.h>
-int print1(int N)//将整数转换为字符，判断字符串的长度来读取整数的位数
+int sizeof1(int N)//将整数转换为字符，判断字符串的长度来读取整数的位数
 {
 	char str[10000];
 	snprintf(str,sizeof(str), "%d", N);
@@ -124,7 +124,7 @@ int main()
 	for (i = 1; i < x; i++)
 	{
 		int j =2;
-		for (j = 2; j < N[i]; j++)
+		for (j = 2; j < N[i]/2; j++)
 		{
 			if (N[i] % j == 0)
 			{
@@ -140,34 +140,28 @@ int main()
 		int s2 = 0;
 		int s3 = 0;
 		int s4 = 0;
-		int l=print1(N[i]);
-		if (l == 1)
+		s1 = N[i] % 10;
+		s2 = (N[i] - s1) % 100;
+		s3 = (N[i] - s2 * 10 - s1) % 1000;
+		s4 = (N[i] - s3 * 100 - s2 * 10 - s1) % 10000;
+		int sz=sizeof1(N[i]);
+		if (sz == 1)
 		{
-			s1 = N[i] % 10;
 			if (s1 % 7 != 0)
 				N[i] = 0;
 		}
-		else if (l == 2)
+		else if (sz == 2)
 		{
-			s1 = N[i] % 10;
-			s2 = (N[i] - s1) % 10;
 			if (s1 != s2||(s1+s2)%7!=0)
 				N[i] = 0;
 		}
-		else if (l == 3)
+		else if (sz == 3)
 		{
-			s1 = N[i] % 10;
-			s2 = (N[i] - s1) % 10;
-			s3 = (N[i] - s2 * 10 - s1) % 10;
 			if (s1 != s3|| (s1 + s2+ s3) % 7 != 0)
 				N[i] = 0;
 		}
-		else if (l == 4)
+		else if (sz == 4)
 		{
-			s1 = N[i] % 10;
-			s2 = (N[i] - s1) % 10;
-			s3 = (N[i] - s2 * 10 - s1) % 10;
-			s4 = (N[i] - s3 * 100 - s2 * 10 - s1) % 10;
 			if (s1 != s4 || s2 != s3 || (s1 + s2 + s3+ s4) % 7 != 0)
 				N[i] = 0;
 		}
