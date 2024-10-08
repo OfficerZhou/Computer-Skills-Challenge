@@ -183,28 +183,28 @@
 // 第三行表示一个整数x，为待查找的数。
 // 输出格式：如果x在数列中出现了，输出它第一次出现的位置(位置是从1开始的序号)，否则输出 - 1。
 // 输入样例1：5
-int main()
-{
-	int n;
-	scanf_s("%d\n", &n);
-	int arr[100];
-	int i;
-	for (i = 0; i < n; i++)
-	{
-		scanf_s("%d", &arr[i]);
-	}
-	int x;
-	scanf_s("%d", &x);
-	int count = 1;
-	i = 0;
-	while (arr[i++] != x)
-	{
-		count++;
-	}
-	if (count >n )
-	{
-		count = -1;
-	}
-	printf("%d", count);
-	return 0;
-}
+//int main()
+//{
+//	int n;
+//	scanf_s("%d\n", &n);
+//	int arr[100];
+//	int i;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf_s("%d", &arr[i]);
+//	}
+//	int x;
+//	scanf_s("%d", &x);
+//	int count = 1;
+//	i = 0;
+//	while (arr[i++] != x)
+//	{
+//		count++;
+//	}
+//	if (count >n )
+//	{
+//		count = -1;
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
