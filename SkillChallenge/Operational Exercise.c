@@ -100,77 +100,110 @@
 // 样例输出 1 
 // 样例解释： 从1~20中素数有2,3,5,7,11,13,17,19，再结合条件2可以看到对称的数只有 2 3 5 7 11，又因
 
-#include<string.h>
-int sizeof1(int N)//将整数转换为字符，判断字符串的长度来读取整数的位数
-{
-	char str[10000];
-	snprintf(str,sizeof(str), "%d", N);
-	int l = strlen(str);
-	return l;
-}
+//#include<string.h>
+//int sizeof1(int N)//将整数转换为字符，判断字符串的长度来读取整数的位数
+//{
+//	char str[10000];
+//	snprintf(str,sizeof(str), "%d", N);
+//	int len = strlen(str);
+//	return len;
+//}
+//int main()
+//{
+//	int x;
+//	int i=0;
+//	int N[10000] = { 0 };
+//	scanf_s("%d", &x);
+//	int s = 2;
+//	for (i = 0; i < x-1; i++)
+//	{
+//		N[i] = s;
+//		s++;
+//	}
+//	//判断是否为素数
+//	for (i = 1; i < x; i++)
+//	{
+//		int j =2;
+//		for (j = 2; j < N[i]/2; j++)
+//		{
+//			if (N[i] % j == 0)
+//			{
+//				N[i] = 0;
+//			}
+//		}
+//	}
+//	for (i = 0; i < x; i++)
+//	{
+//		if (N[i] == 0)
+//			continue;
+//		int s1 = 0;
+//		int s2 = 0;
+//		int s3 = 0;
+//		int s4 = 0;
+//		s1 = N[i] % 10;
+//		s2 = (N[i] - s1) % 100;
+//		s3 = (N[i] - s2 * 10 - s1) % 1000;
+//		s4 = (N[i] - s3 * 100 - s2 * 10 - s1) % 10000;
+//		int sz=sizeof1(N[i]);
+//		if (sz == 1)
+//		{
+//			if (s1 % 7 != 0)
+//				N[i] = 0;
+//		}
+//		else if (sz == 2)
+//		{
+//			if (s1 != s2||(s1+s2)%7!=0)
+//				N[i] = 0;
+//		}
+//		else if (sz == 3)
+//		{
+//			if (s1 != s3|| (s1 + s2+ s3) % 7 != 0)
+//				N[i] = 0;
+//		}
+//		else if (sz == 4)
+//		{
+//			if (s1 != s4 || s2 != s3 || (s1 + s2 + s3+ s4) % 7 != 0)
+//				N[i] = 0;
+//		}
+//	}
+//	int count = 0;
+//	for (i = 0; i < x; i++)
+//	{
+//		if (N[i] != 0)
+//			count++;
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+
+
+//19、已知一个数列包含n个整数，试求出：整数x在数列中的第一次出现位置。
+// 输入格式：第一行表示一个整数n。
+// 第二行表示n个非负整数，是给定的数列，并且数列中的每个数都不大于1000。
+// 第三行表示一个整数x，为待查找的数。
+// 输出格式：如果x在数列中出现了，输出它第一次出现的位置(位置是从1开始的序号)，否则输出 - 1。
+// 输入样例1：5
 int main()
 {
+	int n;
+	scanf_s("%d\n", &n);
+	int arr[100];
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		scanf_s("%d", &arr[i]);
+	}
 	int x;
-	int i=0;
-	int N[10000] = { 0 };
 	scanf_s("%d", &x);
-	int s = 2;
-	for (i = 0; i < x-1; i++)
+	int count = 1;
+	i = 0;
+	while (arr[i++] != x)
 	{
-		N[i] = s;
-		s++;
+		count++;
 	}
-	//判断是否为素数
-	for (i = 1; i < x; i++)
+	if (count >n )
 	{
-		int j =2;
-		for (j = 2; j < N[i]/2; j++)
-		{
-			if (N[i] % j == 0)
-			{
-				N[i] = 0;
-			}
-		}
-	}
-	for (i = 0; i < x; i++)
-	{
-		if (N[i] == 0)
-			continue;
-		int s1 = 0;
-		int s2 = 0;
-		int s3 = 0;
-		int s4 = 0;
-		s1 = N[i] % 10;
-		s2 = (N[i] - s1) % 100;
-		s3 = (N[i] - s2 * 10 - s1) % 1000;
-		s4 = (N[i] - s3 * 100 - s2 * 10 - s1) % 10000;
-		int sz=sizeof1(N[i]);
-		if (sz == 1)
-		{
-			if (s1 % 7 != 0)
-				N[i] = 0;
-		}
-		else if (sz == 2)
-		{
-			if (s1 != s2||(s1+s2)%7!=0)
-				N[i] = 0;
-		}
-		else if (sz == 3)
-		{
-			if (s1 != s3|| (s1 + s2+ s3) % 7 != 0)
-				N[i] = 0;
-		}
-		else if (sz == 4)
-		{
-			if (s1 != s4 || s2 != s3 || (s1 + s2 + s3+ s4) % 7 != 0)
-				N[i] = 0;
-		}
-	}
-	int count = 0;
-	for (i = 0; i < x; i++)
-	{
-		if (N[i] != 0)
-			count++;
+		count = -1;
 	}
 	printf("%d", count);
 	return 0;
