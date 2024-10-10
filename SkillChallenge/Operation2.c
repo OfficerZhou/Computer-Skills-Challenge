@@ -187,64 +187,6 @@
 // 输入： 一个整数n表示n个人的考试成绩（1 < n <= 1000), 随后有n行，每行依次是这个学生的姓名，语文成绩，数学成绩，外语成绩（都是整数） 
 // 输出： 首先输出语文最低的人（可以并列），然后是数学最低的, 外语最低的，最后输出总分最低的人（可以并列）具体格式参考输出样例
 // 输入样例 5 tom 100 99 98 alice 100 100 1
-#include<stdio.h>
-int main()
-{
-	struct Stu
-	{
-		char name[20];
-		int chinese;
-		int math;
-		int english;
-		int total;
-	};
-	struct Stu stu[100];
-	int N;
-	printf("请输入学生人数：\n");
-	scanf_s("%d", &N);
-	//getchar();
-	int i;
-	for (i = 0; i < N; i++)
-	{
-		printf("请输入%d名学生的姓名、语文成绩、数学成绩、英语成绩\n", i + 1);
-		scanf_s("%s", stu[i].name, sizeof(stu[i].name));
-		scanf_s("%d", &stu[i].chinese);
-		scanf_s("%d", &stu[i].math);
-		scanf_s("%d", &stu[i].english);
-		stu[i].total = stu[i].chinese + stu[i].math + stu[i].english;
-	}
-	int minc=101,minm=101,mine=101,mint = 101;
-	for (i = 0; i < N; i++)
-	{
-		if (stu[i].chinese <= minc)
-			minc = stu[i].chinese;
-		if (stu[i].math <= minm)
-			minm = stu[i].math;
-		if (stu[i].english <= mine)
-			mine = stu[i].english;
-		if (stu[i].total<=mint)
-			mint = stu[i].total;
-	}
-	for (i = 0; i < N; i++)
-		if (stu[i].chinese == minc)
-			printf("%s ", stu[i].name);
-	printf("\n");
-	for (i = 0; i < N; i++)
-		if (stu[i].math == minm)
-			printf("%s ", stu[i].name);
-	printf("\n");
-	for (i = 0; i < N; i++)
-		if (stu[i].english <= mine)
-			printf("%s ", stu[i].name);
-	printf("\n");
-	for (i = 0; i < N; i++)
-		if(stu[i].total==mint)
-			printf("%s ",stu[i].name);
-	printf("\n");
-	return 0;
-}
-
-
 //#include<stdio.h>
 //int main()
 //{
@@ -265,7 +207,7 @@ int main()
 //	for (i = 0; i < N; i++)
 //	{
 //		printf("请输入%d名学生的姓名、语文成绩、数学成绩、英语成绩\n", i + 1);
-//		scanf_s("%s", stu[i].name, (unsigned)sizeof(stu[i].name));
+//		scanf_s("%s", stu[i].name, sizeof(stu[i].name));
 //		scanf_s("%d", &stu[i].chinese);
 //		scanf_s("%d", &stu[i].math);
 //		scanf_s("%d", &stu[i].english);
@@ -303,6 +245,8 @@ int main()
 //}
 
 
+
+
 //19、现有一个n*m的地图，地图上每个格子有一个正整数表示该格子的幸运值。
 // 小明初始时站在地图左上角（(1，1)的位置），同时面朝右方，他每次去往一个相邻（上下左右）且没有被经过的格子，
 // 若是他前往的格子方向是自己面朝的方向，则不需要转向，否则需要消耗一张转向卡，且小明最开始拥有k张转向卡。
@@ -316,6 +260,5 @@ int main()
 	int n , m ;
 	scanf_s("%d %d", &n, &m);
 	int x = 1, y = 1;
-	
 	return 0;
 }
