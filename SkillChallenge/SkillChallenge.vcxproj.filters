@@ -21,5 +21,11 @@
     <ClCompile Include="Operational Exercise.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Operation2.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Operation3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

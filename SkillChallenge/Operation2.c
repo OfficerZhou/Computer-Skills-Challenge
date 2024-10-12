@@ -252,13 +252,12 @@
 // 若是他前往的格子方向是自己面朝的方向，则不需要转向，否则需要消耗一张转向卡，且小明最开始拥有k张转向卡。
 // 小明经过的所有格子中的数字按照顺序拼接起来就是他得到的总的幸运值，比如
 
-#include<stdio.h>
-#define N 10;
-#define M 20;
-int main()
-{
-	int n , m ;
-	scanf_s("%d %d", &n, &m);
-	int x = 1, y = 1;
-	return 0;
-}
+//#include<stdio.h>
+//#define N 10;
+//#define M 20;
+//int main()
+//{
+//	char a[] = "\0abc\012345";
+//	char ch[] = { "Happy\02021" };
+//	return 0;
+//}

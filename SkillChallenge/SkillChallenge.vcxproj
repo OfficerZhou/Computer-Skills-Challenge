@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Master.c" />
     <ClCompile Include="Operation2.c" />
+    <ClCompile Include="Operation3.c" />
     <ClCompile Include="Operational Exercise.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
