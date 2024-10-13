@@ -68,68 +68,55 @@
 // 输出： 输出这两个字符出现次数的差值的绝对值 
 // 输入样例： AbddeDfacd A d 
 // 输出样例： 2 (解释:字符串中字符'A'出现了2次，字符'd'出现了4次，则结果为|2-4|=2)
-#include<stdio.h>
-#include<string.h>
-#include<math.h>
-int main()
-{
-	char ch[10001];
-	int i;
-	fgets(ch, sizeof(ch), stdin);
-	fflush(stdin);
-	char a, b;
-	printf("请输入两个字符:>\n");
-	scanf_s("%c", &a);
-	getchar();
-	scanf_s("%c", &b);
-	int countA = 0, countB = 0;
-	for (i = 0; ch[i]!='\0'; i++)
-	{
-		if (ch[i] == a || ch[i] == a + ('a' - 'A') || ch[i] == a - ('a' - 'A'))
-			countA++;
-		if (ch[i] == b || ch[i] == b + ('a' - 'A') || ch[i] == b - ('a' - 'A'))
-			countB++;
-	}
-	int number = abs(countA - countB);
-	printf("你输入的字符串为：%s\n", ch);
-	printf("要寻找的字符：%c %c\n", a, b);
-	printf("%c:%d %c:%d\n", a, countA, b, countB);
-	printf("%d", number);
-	return 0;
-}
-
-
 //#include<stdio.h>
-//#include<stdlib.h>
 //#include<string.h>
-//#define size 10000
+//#include<math.h>
 //int main()
 //{
-//    char words[size];
-//    int i, y;
-//    char ch1, ch2;
-//    int count1 = 0;
-//    int count2 = 0;
-//
-//    gets_s(words, size);
-//    //if(words[i]=='\n')
-//    //    words[i] = '\0'
-//    scanf_s("%c", &ch1);
-//    scanf_s("%c", &ch2);
-//    for (i = 0; i < strlen(words); i++)
-//    {
-//        if (words[i] == ch1 || words[i] == ch1 + ('a' - 'A') || words[i] == ch1 - ('a' - 'A'))
-//            count1++;
-//        else if (words[i] == ch2 || words[i] == ch2 + ('a' - 'A') || words[i] == ch2 - ('a' - 'A'))
-//            count2++;
-//    }
-//    y = abs(count1 - count2);
-//    printf("%d", y);
-//
-//    return 0;
+//	char ch[10001];
+//	int i;
+//	fgets(ch, sizeof(ch), stdin);
+//	fflush(stdin);
+//	char a, b;
+//	printf("请输入两个字符:>\n");
+//	scanf_s("%c", &a);
+//	getchar();
+//	scanf_s("%c", &b);
+//	int countA = 0, countB = 0;
+//	for (i = 0; ch[i]!='\0'; i++)
+//	{
+//		if (ch[i] == a || ch[i] == a + ('a' - 'A') || ch[i] == a - ('a' - 'A'))
+//			countA++;
+//		if (ch[i] == b || ch[i] == b + ('a' - 'A') || ch[i] == b - ('a' - 'A'))
+//			countB++;
+//	}
+//	int number = abs(countA - countB);
+//	printf("你输入的字符串为：%s\n", ch);
+//	printf("要寻找的字符：%c %c\n", a, b);
+//	printf("%c:%d %c:%d\n", a, countA, b, countB);
+//	printf("%d", number);
+//	return 0;
 //}
 
+
+
+
 //19、现有一个分数数列<img src="http://shixun.ncccu.org.cn/upload/image/20221213/20221213162613703528.jpg"
-// an=(n^2)/(n+1)(n-1),a1=1
+// an=(n^2)/((n+1)(n-1)),a1=1
 // contenteditable="false" style="font-size: 14px; max-width: 100%;"/>
 // 请求其前n项之和，结果以小数的形式给出（显示到小数点后2位，不显示进行四舍五入）。
+//#include<stdio.h>
+//#include<math.h>
+//int main()
+//{
+//	float An, n,sum=1;
+//	int numN;
+//	scanf_s("%d", &numN);
+//	for (n = 2; n <= numN; n++)
+//	{
+//		An = (pow(n, 2) / ((n + 1)*(n - 1)));
+//		sum += An;
+//	}
+//	printf("%.2f", sum);
+//	return 0;
+//}
