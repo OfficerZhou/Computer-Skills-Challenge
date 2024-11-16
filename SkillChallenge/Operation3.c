@@ -120,3 +120,43 @@
 //	printf("%.2f", sum);
 //	return 0;
 //}
+#include<stdio.h>
+int main()
+{
+	int N, M;
+	int i = 0, j = 0, x = 0;
+	int arr[10000] = { 0 };
+	scanf_s("%d %d", &N, &M);
+	while (N)
+	{
+
+		arr[i] = (N % M);
+		N = N / M;
+		i++;
+	}
+
+	for (j = 0; j < i; j++)
+		for (x = 0; x < i - j; x++)
+		{
+			if (arr[x] < arr[x + 1])
+			{
+				int temp;
+				temp = arr[x];
+				arr[x] = arr[x + 1];
+				arr[x + 1] = temp;
+			}
+		}
+	if (M == 16)
+		for (j = 0; j < i; j++)
+		{
+			if (arr[j] < 9)
+				printf("%d", arr[j]);
+			else
+				printf("%c", arr[j]);
+		}
+	else
+		for (j = 0; j < i; j++)
+		{
+			printf("%d", arr[j]);
+		}
+}

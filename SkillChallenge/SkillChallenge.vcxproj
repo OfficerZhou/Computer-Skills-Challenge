@@ -131,6 +131,7 @@
     <ClCompile Include="Operation2.c" />
     <ClCompile Include="Operation3.c" />
     <ClCompile Include="Operational Exercise.c" />
+    <ClCompile Include="zifuchuan_max.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
